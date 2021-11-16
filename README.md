@@ -28,6 +28,7 @@ The following packages and versions are used in this jupyter notebook. Any recen
 
 
 ## Project Structure<a name="Project-Structure"></a>
+```
 ├── app
 │   ├── run.py--------------------------------# Flask file that runs app
 │   └── templates
@@ -44,6 +45,7 @@ The following packages and versions are used in this jupyter notebook. Any recen
 |   ├── train_classifier.py-------------------# ML pipeline codes
 │   ├── ML Pipeline Preparation_NP.ipynb------# jupyter notebook with details and tests for ML pipeline
 |   └── classifier.pkl------------------------# saved model
+```
 
 ## Project Components<a name="Project-Components"></a>
 There are 3 main components in this project.
