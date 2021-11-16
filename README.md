@@ -28,25 +28,22 @@ The following packages and versions are used in this jupyter notebook. Any recen
 
 
 ## Project Structure<a name="Project-Structure"></a>
-- app
-| - template
-| |- master.html----------------------------# main page of web app
-| |- go.html--------------------------------# classification result page of web app
-|- run.py-----------------------------------# Flask file that runs app
-
-- data
-|- disaster_categories.csv------------------# data to process 
-|- disaster_messages.csv--------------------# data to process
-|- process_data.py--------------------------# ETL pipeline codes
-|- DisasterResponse.db----------------------# database to save clean data to
-|- ETL Pipeline Preparation_NP.ipynb--------# jupyter notebook with details and tests for ETL pipeline
-
-- img
-
-- models
-|- train_classifier.py----------------------# ML pipeline codes
-|- classifier.pkl---------------------------# saved model 
-|- ML Pipeline Preparation_NP.ipynb---------# jupyter notebook with details and tests for ML pipeline
+├── app
+│   ├── run.py--------------------------------# Flask file that runs app
+│   └── templates
+│       ├── go.html---------------------------# classification result page of web app
+│       └── master.html-----------------------# main page of web app
+├── data
+│   ├── DisasterResponse.db-------------------# database to save cleansed data
+│   ├── disaster_categories.csv---------------# data to process 
+│   ├── disaster_messages.csv-----------------# data to process 
+│   ├── process_data.py-----------------------# ETL pipeline codes
+|   └── ETL Pipeline Preparation_NP.ipynb-----# jupyter notebook with details and tests for ETL pipeline
+├── img
+├── models
+|   ├── train_classifier.py-------------------# ML pipeline codes
+│   ├── ML Pipeline Preparation_NP.ipynb------# jupyter notebook with details and tests for ML pipeline
+|   └── classifier.pkl------------------------# saved model
 
 ## Project Components<a name="Project-Components"></a>
 There are 3 main components in this project.
