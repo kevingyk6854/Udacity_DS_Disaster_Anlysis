@@ -12,17 +12,18 @@ from sqlalchemy import create_engine
 
 
 def load_data(messages_filepath, categories_filepath):
+    '''
+    INPUT:
+        messages_filepath - (string) a specific file path string for loading messages data
+        categories_filepath - (string) a specific file path string for loading categories data
+    
+    OUTPUT:
+        df - (pandas dataframe) a dataframe merged with messages and categories
 
-    """
-        This function loads datasets (i.e., messages and categories) from local disk
-        
-        args:
-            messages_filepath: a specific file path string for loading messages data
-            categories_filepath: fa specific file path string for loading categories data
-        
-        return:
-            df: a dataframe merged with messages and categories
-    """
+    Description:
+    This function loads datasets (i.e., messages and categories) from local disk
+
+    '''
     
     # load messages, categories dataset
     messages = pd.read_csv(messages_filepath)
@@ -48,16 +49,17 @@ def convert_categorial_variables(value):
     return value
 
 def clean_data(df):
+    ''' 
+    INPUT:
+    df - (pandas dataframe) a raw dataframe
+    
+    OUTPUT:
+    df - (pandas dataframe) a cleansed dataframe
 
-    """
-        This function cleans dataframe
-        
-        args:
-            df: a raw dataframe
-        
-        return:
-            df: a cleansed dataframe
-    """
+    Description:
+    This function cleans dataframe with various approaches
+
+    '''
 
     # create a dataframe of the 36 individual category columns
     categories = df['categories'].str.split(';', expand=True)
@@ -92,14 +94,18 @@ def clean_data(df):
 
 
 def save_data(df, database_filename):
+    '''
+    INPUT:
+    df - (pandas dataframe) a cleansed dataframe
+    database_filename - (string) a specific string for naming database and table
+    
+    OUTPUT:
+    None
 
-    """
-        This function saves dataset into SQLite database
-        
-        args:
-            df: a cleansed dataframe
-            database_filename: a specific string for naming database and table
-    """
+    Description:
+    This function saves dataset into SQLite database
+
+    '''
 
     # get database/table name
     name = os.path.basename(database_filename).split('.')[0]

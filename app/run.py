@@ -19,15 +19,23 @@ app = Flask(__name__)
 
 class DisasterWordExtractor(BaseEstimator, TransformerMixin):
 
-    """
-        A custom transformer which will identify buzzwords signaling disaster
-    """
+    '''    
+    A custom transformer which will identify buzzwords signaling disaster
+    '''
 
     def disaster_words(self, text):
-        """
-        INPUT: text - string, raw text data
-        OUTPUT: bool -bool object, True or False
-        """
+        '''
+        INPUT: 
+        text - raw text data
+
+        OUTPUT: 
+        bool - (bool) True or False
+
+        Description:
+        This function is used to do extra disaster words detection
+
+        '''
+
         # list of words that are commonly used during a disaster event
         disaster_words = ['tsunami','volcano','tornado','avalanche','earthquake','blizzard','drought','bushfire',
                           'tremor','duststorm','magma','twister','windstorm','heat','cyclone','fire','flood',
